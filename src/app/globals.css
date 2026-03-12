@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0a0a0f;
+    color: #f1f5f9;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f0f1a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #0ea5e9;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0284c7;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl font-bold text-white mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-gray-400 text-lg mb-12;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent;
+  }
+
+  .card {
+    @apply bg-dark-700 rounded-xl border border-white/5 hover:border-primary-500/30 transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold px-6 py-3 rounded-lg hover:from-primary-400 hover:to-accent-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary-500/25;
+  }
+
+  .btn-secondary {
+    @apply border border-primary-500/50 text-primary-400 font-semibold px-6 py-3 rounded-lg hover:bg-primary-500/10 transition-all duration-300;
+  }
+
+  .input-field {
+    @apply w-full bg-dark-600 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all duration-200;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+  }
+
+  .box-glow {
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.15);
+  }
+
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(#1a1a2e, #1a1a2e) padding-box,
+                linear-gradient(135deg, #0ea5e9, #8b5cf6) border-box;
+    border: 1px solid transparent;
+  }
+}
